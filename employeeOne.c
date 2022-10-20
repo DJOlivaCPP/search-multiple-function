@@ -1,5 +1,4 @@
 #include <string.h> 
-
 #include "employee.h" 
 
 PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int tableSize, long targetNumber){ 
