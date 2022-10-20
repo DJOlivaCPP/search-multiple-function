@@ -39,7 +39,7 @@ static int compareEmployeePhoneNumber(const void *targetPtr, PtrToConstEmployee 
 
 static int compareEmployeeSalary(const void *targetPtr, PtrToConstEmployee tableValuePtr) 
 { 
-    return * (long *) targetPtr != tableValuePtr->salary;
+    return * (double *) targetPtr != tableValuePtr->salary;
 } 
 
 //These are called wrappers. These functions are what you will use in your main!!! 
@@ -55,10 +55,10 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int size, char* name)
 
 PtrToEmployee searchEmployeeByPhoneNumber(PtrToConstEmployee ptr, int size, char* phone) 
 { 
-    return searchEmployeeTable(ptr, size, phone, compareEmployeeName); 
+    return searchEmployeeTable(ptr, size, phone, compareEmployeePhoneNumber); 
 }
 
 PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int size, double salary) 
 { 
-    return searchEmployeeTable(ptr, size, &salary, compareEmployeeName); 
+    return searchEmployeeTable(ptr, size, &salary, compareEmployeeSalary); 
 }
